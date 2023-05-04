@@ -32,7 +32,8 @@ const readAndAppend = (content, file) => {
       console.error(err);
     } else {
       const parsedData = JSON.parse(data);
-      parsedData.push(content);
+      parsedData.notes_id_counter++;
+      parsedData.notes.push(content);
       writeToFile(file, parsedData);
     }
   });
