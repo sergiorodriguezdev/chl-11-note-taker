@@ -1,6 +1,9 @@
-// ------------------------
-// ADD CREDIT HERE & README
-// ------------------------
+// ------------------------------------------------------------------------------------------
+// I borrowed this module from the bootcamp in-class mini project exercise and modified 
+// it slightly to fit my solution
+//  Week 11     - Express
+//  Activity 28 - Student Mini Project
+// ------------------------------------------------------------------------------------------
 
 const fs = require('fs');
 const util = require('util');
@@ -32,7 +35,7 @@ const readAndAppend = (content, file) => {
       console.error(err);
     } else {
       const parsedData = JSON.parse(data);
-      parsedData.notes_id_counter++;
+      parsedData.notes_id_counter++; // Increment next note ID metadata by 1
       parsedData.notes.push(content);
       writeToFile(file, parsedData);
     }

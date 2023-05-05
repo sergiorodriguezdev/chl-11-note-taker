@@ -78,7 +78,7 @@ notes.delete('/:id', (req, res) => {
         .then(data => JSON.parse(data))
         .then(json => {
 
-            // Finx index of note to delete
+            // Find index of note to delete
             const noteToDelete = json.notes.findIndex(item => item.id === noteId);
             
             // If index not found (-1) then throw error
@@ -101,8 +101,6 @@ notes.delete('/:id', (req, res) => {
                 message: 'Error deleting note',
                 error: error.message
             };
-
-            console.log(error.message);
 
             // Return error object
             res.json(JSON.stringify(deleteError));
